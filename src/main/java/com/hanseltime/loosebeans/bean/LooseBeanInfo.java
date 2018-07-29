@@ -144,8 +144,9 @@ public class LooseBeanInfo<T> implements BeanInfo {
      * </code>
      * 
      * @param externCacheUnlock Whether of not the calling context will unlock the cache Lock.  If false, this is simply the nullary constructor.
+     * @throws Exception If class loader fails in an unmanageable way (catch in a calling context, or at least with debugger)
      */
-    protected LooseBeanInfo( boolean externCacheUnlock ) {
+    protected LooseBeanInfo( boolean externCacheUnlock ) throws Exception {
         //Make beanClazz_ be populated
         populateBeanClassInstance();
 
